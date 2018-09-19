@@ -1,17 +1,10 @@
-#Вывести в консоль матрицу с еденицами по диагонали. Размер задается с консоли.
+# Вывести в консоль матрицу с еденицами по диагонали. Размер задается с консоли.
 
-print "enter size matrix: "
-size = gets.to_i
-
-puts "size * size"
-
-for i in (0...size)
-  for j in (0...size)
-    if(i == j)
-      print "1"
-    else
-      print "0"
+class Task3
+  def p_matrix(size)
+    (0...size).each do |i|
+      (0...size).each { |j| print i.equal?(j) ? '1' : '0' }
+      print "\n"
     end
   end
-  print "\n"
 end
