@@ -1,27 +1,26 @@
-#Нарисовать в консоле круг, диаметр\радиус которого задается с консоли.
+# Нарисовать в консоле круг, диаметр\радиус которого задается с консоли.
 
-puts "enter radius : "
+puts 'enter radius :'
 
 radius = gets.to_i
-y = radius
 
+y = radius
 r_in = radius - 0.3
 r_out = radius + 0.3
 
-while y >= -radius do
-    x = -radius
-    while x < r_out do
-        if (x * x + y * y >= r_in * r_in) && (x * x + y * y <= r_out * r_out)
-            print '*'
-        else
-            print ' '
-        end
-        x += 0.5
+while y >= -radius
+  x = -radius
+  while x < r_out
+    if (x * x + y * y >= r_in * r_in) && (x * x + y * y <= r_out * r_out)
+      print '*'
+    else
+      print ' '
     end
+    x += 0.5
+  end
 
-    print "\n"
-
-    y -= 1
+  print "\n"
+  y -= 1
 end
 
 

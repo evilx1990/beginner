@@ -1,19 +1,13 @@
-#Написать метод, который принимает строку и приводит её в CamelCase, ruby_case_underscore и css-case
+# Написать метод, который принимает строку и приводит её в CamelCase, ruby_case_underscore и css-case
 
-def formatize(str, param)
+def formatize(str, param) 
   case param
   when :camel
-    str.split().map() do |s|
-      s.capitalize()
-    end.join()
+    str.split.map(&:capitalize).join
   when :underscore
-    str.split().map() do |s|
-      s.downcase()
-    end.join('_')
+    str.split.map(&:downcase).join('_')
   when :css
-    str.split().map() do |s|
-      s.downcase()
-    end.join('-')
+    str.split.map(&:downcase).join('-')
   end
 end
 
