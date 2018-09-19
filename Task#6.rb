@@ -23,4 +23,3 @@ class Task6
     ar
   end
 end
-
