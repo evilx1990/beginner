@@ -2,12 +2,12 @@
 # Каждый таск запускается с помощью консоли.
 # То-есть, ввели в консоли 1 - запускается и выполняется первый таск
 
-require_relative './Task#1'
-require_relative './Task#2'
-require_relative './Task#3'
-require_relative './Task#4'
-require_relative './Task#5'
-require_relative './Task#6'
+require_relative './Task1'
+require_relative './Task2'
+require_relative './Task3'
+require_relative './Task4'
+require_relative './Task5'
+require_relative './Task6'
 
 module Tasksable
   def menu
@@ -23,7 +23,8 @@ module Tasksable
       puts '0 - exit'
 
       print 'enter >> '
-      choose = gets.to_i
+      choose = 0
+      choose = gets.chomp.to_i
 
       case choose
       when 1
@@ -87,7 +88,7 @@ module Tasksable
     array = [[1, 2, 3, 4, '1'], %w[2 5 10], [111, 222, 333, 444],
              %w[i love ruby], { key: 'value' }, [[['text', 100_000]]]]
 
-    puts v.get_all(array, String)
+    puts v.get_all(array, Integer)
   end
 
 end

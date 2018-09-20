@@ -6,7 +6,7 @@ class Task4
     if hash.respond_to?(:key?) && hash.key?(key)
       hash[key]
     elsif hash.respond_to?(:each)
-      value = nil
+      value = []
       hash.each { |h| value = search_in_hash(h.last, key) }
       value
     end
