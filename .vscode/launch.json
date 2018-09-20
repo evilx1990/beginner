@@ -21,13 +21,28 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "program": "${file}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha Tests",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/test"
+            ],
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
             "program": "${workspaceFolder}/app.js"
         },
-		{
-			"name": "Debug Local",
-			"type": "Ruby",
-			"request": "launch",
-			"program": "${workspaceRoot}/main.rb"
-		}
 	]
 }

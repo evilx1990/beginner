@@ -3,12 +3,12 @@
 
 class Task4
   def search_in_hash(hash, key)
-    if hash.respond_to?(:key?) && hash.key?(key)
-      hash[key]
-    elsif hash.respond_to?(:each)
-      value = []
-      hash.each { |h| value = search_in_hash(h.last, key) }
-      value
+    hash.each do |k, val|
+      if val.is_a?(Hash)
+        search_in_hash(val, key)
+      elsif k == key.to_sym
+        puts val.inspect
+      end
     end
   end
 end

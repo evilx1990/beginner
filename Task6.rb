@@ -9,17 +9,6 @@
 
 class Task6
   def get_all(array, type)
-    ar = []
-    array.each do |item|
-      if item.is_a?(Array) # Если вложен массив
-
-        item.each { |r| ar << get_all(r, type) if r.is_a?(Array) } # Проверка наличия вложенных массивов во вложенных массивах(рекурсия)
-
-        item.each { |x| ar << x if x.is_a?type }
-      elsif item .is_a?(Hash) # Если вложен хеш
-        item.each_key { |key| ar << h if key.is_a?type }
-      end
-    end
-    ar
+    array.flatten.select { |res| res.is_a?(type) } # Не видит значение в хеше
   end
 end

@@ -10,7 +10,7 @@ require_relative './Task5'
 require_relative './Task6'
 
 module Tasksable
-  def menu
+  def self.menu
     loop do
       system 'clear'
 
@@ -47,24 +47,24 @@ module Tasksable
     end
   end
 
-  def love_ruby
+  def self.love_ruby
     v = Task1.new
     v.puts_ruby
   end
 
-  def circle
+  def self.circle
     v = Task2.new
     print 'enter radius: '
     v.p_circle(gets.to_i)
   end
 
-  def matrix
+  def self.matrix
     v = Task3.new
     print 'enter matrix size(matrix is ​​semantic) : '
     v.p_matrix(gets.to_i)
   end
 
-  def hash
+  def self.hash
     v = Task4.new
     puts "value search from 'key9' key in hash { key1: {}, key2: {}, /
           key3: { key4: 'str', key5: 'str2', key6: { key7: { key8: 1, key9: [2] } } } }"
@@ -72,10 +72,11 @@ module Tasksable
              key3: { key4: 'str', key5: 'str2',
                      key6: { key7: { key8: 1, key9: [2] } } } }
     print 'result : '
-    puts v.search_in_hash(hash, :key9)
+    v.search_in_hash(hash, :key9)
+    
   end
 
-  def str_change
+  def self.str_change
     v = Task5.new
     str = 'i love ruby'
     puts v.formatize(str, :camel)
@@ -83,18 +84,13 @@ module Tasksable
     puts v.formatize(str, :css)
   end
 
-  def search_types
+  def self.search_types
     v = Task6.new
     array = [[1, 2, 3, 4, '1'], %w[2 5 10], [111, 222, 333, 444],
              %w[i love ruby], { key: 'value' }, [[['text', 100_000]]]]
 
-    puts v.get_all(array, Integer)
+    puts v.get_all(array, String)
   end
-
 end
 
-class Run
-  extend Tasksable
-end
-
-Run.menu
+Tasksable.menu
