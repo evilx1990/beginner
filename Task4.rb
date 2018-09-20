@@ -6,7 +6,7 @@ class Task4
     hash.each do |k, val|
       if val.is_a?(Hash)
         search_in_hash(val, key)
-      elsif k == key.to_sym
+      elsif k == key
         puts val.inspect
       end
     end
