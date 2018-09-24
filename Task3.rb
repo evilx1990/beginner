@@ -1,10 +1,8 @@
 # Вывести в консоль матрицу с еденицами по диагонали. Размер задается с консоли.
+require 'matrix'
 
 class Task3
   def p_matrix(size)
-    (0...size).each do |i|
-      (0...size).each { |j| print i.equal?(j) ? '1' : '0' }
-      print "\n"
-    end
+    Matrix.scalar(size, 1).to_a.each {|line| puts line.inspect}
   end
 end
